@@ -1,442 +1,770 @@
 /* ============================================================
    FRED & FRED AGRO ENGINEERS
-   MAIN JAVASCRIPT
+   GLOBAL JAVASCRIPT
 ============================================================ */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-        /* ====================================================
-           ELEMENTS
-        ==================================================== */
+    /* ========================================================
+       ELEMENTS
+    ======================================================== */
 
-        const header =
-            document.getElementById(
-                "siteHeader"
-            );
+    const header =
+        document.getElementById("siteHeader");
 
-        const toggle =
-            document.getElementById(
-                "menuToggle"
-            );
+    const toggle =
+        document.getElementById("menuToggle");
 
-        const nav =
-            document.getElementById(
-                "siteNav"
-            );
+    const nav =
+        document.getElementById("siteNav");
 
-        const backTop =
-            document.getElementById(
-                "backTop"
-            );
+    const backTop =
+        document.getElementById("backTop");
 
 
-        /* ====================================================
-           NAVBAR SCROLL EFFECT
-        ==================================================== */
+    /* ========================================================
+       HEADER SCROLL EFFECT
+    ======================================================== */
 
-        function updateHeader() {
+    function updateHeader() {
 
-            if (!header) {
-                return;
-            }
-
-            header.classList.toggle(
-                "scrolled",
-                window.scrollY > 20
-            );
-
+        if (!header) {
+            return;
         }
 
+        header.classList.toggle(
+            "scrolled",
+            window.scrollY > 18
+        );
+    }
 
-        updateHeader();
+    updateHeader();
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        {
+            passive: true
+        }
+    );
 
 
-        window.addEventListener(
-            "scroll",
-            updateHeader,
-            {
-                passive: true
-            }
+    /* ========================================================
+       MOBILE MENU
+    ======================================================== */
+
+    function openMenu() {
+
+        if (!toggle || !nav) {
+            return;
+        }
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "true"
         );
 
+        toggle.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
 
-        /* ====================================================
-           OPEN MENU
-        ==================================================== */
+        nav.classList.add("open");
 
-        function openMenu() {
+        document.body.classList.add(
+            "menu-open"
+        );
+    }
 
-            if (!toggle || !nav) {
-                return;
-            }
 
-            toggle.setAttribute(
-                "aria-expanded",
-                "true"
-            );
+    function closeMenu() {
 
-            toggle.setAttribute(
-                "aria-label",
-                "Close navigation menu"
-            );
-
-            nav.classList.add(
-                "open"
-            );
-
-            document.body.classList.add(
-                "menu-open"
-            );
-
+        if (!toggle || !nav) {
+            return;
         }
 
+        toggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-        /* ====================================================
-           CLOSE MENU
-        ==================================================== */
+        toggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
 
-        function closeMenu() {
+        nav.classList.remove("open");
 
-            if (!toggle || !nav) {
-                return;
-            }
-
-            toggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            toggle.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
-
-            nav.classList.remove(
-                "open"
-            );
-
-            document.body.classList.remove(
-                "menu-open"
-            );
-
-        }
+        document.body.classList.remove(
+            "menu-open"
+        );
+    }
 
 
-        /* ====================================================
-           HAMBURGER CLICK
-        ==================================================== */
+    /* ========================================================
+       HAMBURGER
+    ======================================================== */
 
-        if (
-            toggle &&
-            nav
-        ) {
+    if (toggle && nav) {
 
-            toggle.addEventListener(
-                "click",
-                (event) => {
-
-                    /*
-                       Prevent the document-level
-                       click handler from interfering.
-                    */
-
-                    event.stopPropagation();
-
-
-                    const isOpen =
-                        toggle.getAttribute(
-                            "aria-expanded"
-                        ) === "true";
-
-
-                    if (isOpen) {
-
-                        closeMenu();
-
-                    } else {
-
-                        openMenu();
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        /* ====================================================
-           NAVIGATION LINK CLICK
-        ==================================================== */
-
-        if (nav) {
-
-            nav
-                .querySelectorAll(
-                    ".nav-link"
-                )
-                .forEach(
-                    (link) => {
-
-                        link.addEventListener(
-                            "click",
-                            () => {
-
-                                closeMenu();
-
-                            }
-                        );
-
-                    }
-                );
-
-        }
-
-
-        /* ====================================================
-           CLICK OUTSIDE
-        ==================================================== */
-
-        document.addEventListener(
+        toggle.addEventListener(
             "click",
             (event) => {
 
-                if (
-                    !nav ||
-                    !toggle
-                ) {
+                event.stopPropagation();
 
-                    return;
+                const isOpen =
+                    toggle.getAttribute(
+                        "aria-expanded"
+                    ) === "true";
 
-                }
-
-
-                const menuIsOpen =
-                    nav.classList.contains(
-                        "open"
-                    );
-
-
-                if (!menuIsOpen) {
-
-                    return;
-
-                }
-
-
-                const clickedInsideNav =
-                    nav.contains(
-                        event.target
-                    );
-
-
-                const clickedToggle =
-                    toggle.contains(
-                        event.target
-                    );
-
-
-                if (
-                    !clickedInsideNav &&
-                    !clickedToggle
-                ) {
+                if (isOpen) {
 
                     closeMenu();
 
-                }
+                } else {
 
+                    openMenu();
+
+                }
             }
         );
 
 
-        /* ====================================================
-           ESCAPE KEY
-        ==================================================== */
+        nav
+            .querySelectorAll(".nav-link")
+            .forEach((link) => {
 
-        document.addEventListener(
-            "keydown",
-            (event) => {
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            });
+    }
+
+
+    /* ========================================================
+       CLICK OUTSIDE
+    ======================================================== */
+
+    document.addEventListener(
+        "click",
+        (event) => {
+
+            if (!nav || !toggle) {
+                return;
+            }
+
+            const menuIsOpen =
+                nav.classList.contains("open");
+
+            if (
+                menuIsOpen &&
+                !nav.contains(event.target) &&
+                !toggle.contains(event.target)
+            ) {
+
+                closeMenu();
+
+            }
+        }
+    );
+
+
+    /* ========================================================
+       ESCAPE
+    ======================================================== */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeMenu();
+
+            }
+        }
+    );
+
+
+    /* ========================================================
+       CLOSE MOBILE MENU ON DESKTOP
+    ======================================================== */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (
+                window.innerWidth > 820
+            ) {
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+
+    /* ========================================================
+       CURRENT PAGE
+    ======================================================== */
+
+    if (nav) {
+
+        const currentPage =
+            window.location.pathname
+                .split("/")
+                .pop() ||
+            "index.html";
+
+
+        nav
+            .querySelectorAll(".nav-link")
+            .forEach((link) => {
+
+                const href =
+                    link.getAttribute("href");
+
 
                 if (
-                    event.key === "Escape"
+                    href === currentPage
                 ) {
 
-                    closeMenu();
+                    link.classList.add(
+                        "active"
+                    );
 
                 }
 
-            }
+            });
+
+    }
+
+
+    /* ========================================================
+       SCROLL REVEAL
+    ======================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
         );
 
 
-        /* ====================================================
-           CLOSE WHEN RETURNING TO DESKTOP
-        ==================================================== */
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
 
-        window.addEventListener(
-            "resize",
-            () => {
+        const revealObserver =
+            new IntersectionObserver(
+                (
+                    entries,
+                    observer
+                ) => {
 
-                if (
-                    window.innerWidth > 820
-                ) {
+                    entries.forEach(
+                        (entry) => {
 
-                    closeMenu();
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                }
+                                entry.target.classList.add(
+                                    "visible"
+                                );
 
-            }
-        );
+                                observer.unobserve(
+                                    entry.target
+                                );
 
-
-        /* ====================================================
-           ACTIVE CURRENT PAGE
-        ==================================================== */
-
-        if (nav) {
-
-            const currentPage =
-                window.location.pathname
-                    .split("/")
-                    .pop() ||
-                "index.html";
-
-
-            nav
-                .querySelectorAll(
-                    ".nav-link"
-                )
-                .forEach(
-                    (link) => {
-
-                        const href =
-                            link.getAttribute(
-                                "href"
-                            );
-
-
-                        if (
-                            href ===
-                            currentPage
-                        ) {
-
-                            link.classList.add(
-                                "active"
-                            );
+                            }
 
                         }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            (element) => {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+    } else {
+
+        revealElements.forEach(
+            (element) => {
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ========================================================
+       BACK TO TOP
+    ======================================================== */
+
+    if (backTop) {
+
+        backTop.addEventListener(
+            "click",
+            (event) => {
+
+                event.preventDefault();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+
+
+    /* ========================================================
+       ========================================================
+       VALUE CHAIN ORBIT
+       ========================================================
+    ======================================================== */
+
+    const diagram =
+        document.getElementById(
+            "valueChainDiagram"
+        );
+
+    const orbitArrow =
+        document.getElementById(
+            "orbitArrow"
+        );
+
+    const valueNodes =
+        diagram
+            ? [
+                ...diagram.querySelectorAll(
+                    ".value-node"
+                )
+            ]
+            : [];
+
+
+    if (
+        diagram &&
+        orbitArrow &&
+        valueNodes.length
+    ) {
+
+        /* ====================================================
+           CONFIG
+        ==================================================== */
+
+        const orbitDuration =
+            15000;
+
+        let currentAngle = 0;
+
+        let lastTimestamp =
+            performance.now();
+
+        let animationFrame = null;
+
+        let orbitPaused = false;
+
+
+        /* ====================================================
+           NORMALIZE ANGLE
+        ==================================================== */
+
+        function normalizeAngle(
+            angle
+        ) {
+
+            return (
+                (
+                    angle % 360
+                ) + 360
+            ) % 360;
+
+        }
+
+
+        /* ====================================================
+           ANGLE DISTANCE
+        ==================================================== */
+
+        function angleDifference(
+            first,
+            second
+        ) {
+
+            const difference =
+                Math.abs(
+                    normalizeAngle(first) -
+                    normalizeAngle(second)
+                );
+
+            return Math.min(
+                difference,
+                360 - difference
+            );
+
+        }
+
+
+        /* ====================================================
+           POSITION ORBIT ARROW
+        ==================================================== */
+
+        function updateOrbit(
+            timestamp
+        ) {
+
+            const delta =
+                timestamp -
+                lastTimestamp;
+
+            lastTimestamp =
+                timestamp;
+
+
+            /* ------------------------------------------------
+               ROTATE ONLY WHEN NOT PAUSED
+            ------------------------------------------------ */
+
+            if (!orbitPaused) {
+
+                currentAngle +=
+                    (
+                        360 /
+                        orbitDuration
+                    ) *
+                    delta;
+
+                currentAngle =
+                    normalizeAngle(
+                        currentAngle
+                    );
+
+            }
+
+
+            /* ------------------------------------------------
+               DIAGRAM CENTER
+            ------------------------------------------------ */
+
+            const diagramRect =
+                diagram.getBoundingClientRect();
+
+            const centerX =
+                diagram.offsetWidth /
+                2;
+
+            const centerY =
+                diagram.offsetHeight /
+                2;
+
+
+            /* ------------------------------------------------
+               GET ROTATING RING
+            ------------------------------------------------ */
+
+            const ring =
+                diagram.querySelector(
+                    ".value-rotating-ring"
+                );
+
+
+            if (!ring) {
+
+                return;
+
+            }
+
+
+            const ringRect =
+                ring.getBoundingClientRect();
+
+
+            /*
+               Use the ring's actual rendered
+               size. This keeps the arrow
+               responsive.
+            */
+
+            const radius =
+                Math.min(
+                    ringRect.width,
+                    ringRect.height
+                ) / 2;
+
+
+            const radians =
+                (
+                    currentAngle -
+                    90
+                ) *
+                Math.PI /
+                180;
+
+
+            const arrowX =
+                centerX +
+                radius *
+                Math.cos(
+                    radians
+                );
+
+
+            const arrowY =
+                centerY +
+                radius *
+                Math.sin(
+                    radians
+                );
+
+
+            /* ------------------------------------------------
+               POSITION ARROW
+            ------------------------------------------------ */
+
+            orbitArrow.style.left =
+                `${arrowX - 20}px`;
+
+            orbitArrow.style.top =
+                `${arrowY - 20}px`;
+
+
+            orbitArrow.style.transform =
+                `rotate(${currentAngle + 90}deg)`;
+
+
+            /* ------------------------------------------------
+               FIND CLOSEST NODE
+            ------------------------------------------------ */
+
+            let closestNode =
+                null;
+
+            let closestDistance =
+                Infinity;
+
+
+            valueNodes.forEach(
+                (node) => {
+
+                    const nodeAngle =
+                        Number(
+                            node.dataset.angle
+                        );
+
+
+                    const distance =
+                        angleDifference(
+                            currentAngle,
+                            nodeAngle
+                        );
+
+
+                    if (
+                        distance <
+                        closestDistance
+                    ) {
+
+                        closestDistance =
+                            distance;
+
+                        closestNode =
+                            node;
 
                     }
+
+                }
+            );
+
+
+            /* ------------------------------------------------
+               RESET ALL NODES
+            ------------------------------------------------ */
+
+            valueNodes.forEach(
+                (node) => {
+
+                    node.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            orbitArrow.classList.remove(
+                "active"
+            );
+
+
+            /* ------------------------------------------------
+               ACTIVE NODE
+            ------------------------------------------------ */
+
+            if (
+                closestNode &&
+                closestDistance <= 17
+            ) {
+
+                closestNode.classList.add(
+                    "active"
+                );
+
+                orbitArrow.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            /* ------------------------------------------------
+               NEXT FRAME
+            ------------------------------------------------ */
+
+            animationFrame =
+                requestAnimationFrame(
+                    updateOrbit
                 );
 
         }
 
 
         /* ====================================================
-           SCROLL REVEAL
+           HOVER PAUSE
         ==================================================== */
 
-        const revealElements =
-            document.querySelectorAll(
-                ".reveal"
-            );
+        valueNodes.forEach(
+            (node) => {
+
+                node.addEventListener(
+                    "mouseenter",
+                    () => {
+
+                        orbitPaused =
+                            true;
+
+                    }
+                );
 
 
-        if (
-            "IntersectionObserver"
-            in window
-        ) {
+                node.addEventListener(
+                    "mouseleave",
+                    () => {
 
-            const observer =
-                new IntersectionObserver(
-                    (
-                        entries,
-                        observerInstance
-                    ) => {
+                        orbitPaused =
+                            false;
 
-                        entries.forEach(
-                            (entry) => {
+                        /*
+                           Reset timestamp so the
+                           next frame doesn't jump.
+                        */
 
-                                if (
-                                    entry.isIntersecting
-                                ) {
+                        lastTimestamp =
+                            performance.now();
 
-                                    entry.target.classList.add(
-                                        "visible"
-                                    );
+                    }
+                );
+
+            }
+        );
 
 
-                                    observerInstance.unobserve(
-                                        entry.target
-                                    );
+        /* ====================================================
+           TOUCH SUPPORT
+        ==================================================== */
 
-                                }
+        valueNodes.forEach(
+            (node) => {
 
-                            }
-                        );
+                node.addEventListener(
+                    "touchstart",
+                    () => {
+
+                        orbitPaused =
+                            true;
 
                     },
                     {
-                        threshold:
-                            0.12
+                        passive: true
                     }
                 );
 
+                node.addEventListener(
+                    "touchend",
+                    () => {
 
-            revealElements.forEach(
-                (element) => {
+                        orbitPaused =
+                            false;
 
-                    observer.observe(
-                        element
-                    );
+                        lastTimestamp =
+                            performance.now();
 
-                }
-            );
+                    },
+                    {
+                        passive: true
+                    }
+                );
 
-        } else {
-
-            revealElements.forEach(
-                (element) => {
-
-                    element.classList.add(
-                        "visible"
-                    );
-
-                }
-            );
-
-        }
+            }
+        );
 
 
         /* ====================================================
-           BACK TO TOP
+           START ORBIT
         ==================================================== */
 
-        if (backTop) {
-
-            backTop.addEventListener(
-                "click",
-                (event) => {
-
-                    event.preventDefault();
-
-
-                    window.scrollTo({
-
-                        top:
-                            0,
-
-                        behavior:
-                            "smooth"
-
-                    });
-
-                }
+        animationFrame =
+            requestAnimationFrame(
+                updateOrbit
             );
 
-        }
+
+        /* ====================================================
+           CLEANUP
+        ==================================================== */
+
+        window.addEventListener(
+            "beforeunload",
+            () => {
+
+                if (animationFrame) {
+
+                    cancelAnimationFrame(
+                        animationFrame
+                    );
+
+                }
+
+            }
+        );
 
     }
-);
+
+});
