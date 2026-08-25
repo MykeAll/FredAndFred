@@ -1,0 +1,1404 @@
+/* ============================================================
+   FRED & FRED AGRO ENGINEERS
+   CONTACT PAGE
+============================================================ */
+
+
+/* ============================================================
+   ROOT
+============================================================ */
+
+:root {
+
+    --contact-navy:
+        #062b4d;
+
+    --contact-navy-dark:
+        #031d34;
+
+    --contact-navy-light:
+        #073b5d;
+
+    --contact-green:
+        #6db23f;
+
+    --contact-green-light:
+        #82c94d;
+
+    --contact-orange:
+        #ff7d1a;
+
+    --contact-white:
+        #ffffff;
+
+    --contact-muted:
+        #c5d3df;
+
+    --contact-border:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+}
+
+
+/* ============================================================
+   CONTACT HERO
+============================================================ */
+
+.contact-hero {
+
+    position:
+        relative;
+
+    min-height:
+        100svh;
+
+    min-height:
+        900px;
+
+    padding:
+        155px
+        6%
+        90px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse
+            at
+            50%
+            80%,
+            rgba(
+                15,
+                84,
+                122,
+                0.48
+            ),
+            transparent
+            50%
+        ),
+
+        linear-gradient(
+            180deg,
+            #062b4d 0%,
+            #052844 65%,
+            #041f39 100%
+        );
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ============================================================
+   BACKGROUND GLOW
+============================================================ */
+
+.contact-glow {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+.contact-glow-one {
+
+    width:
+        550px;
+
+    height:
+        550px;
+
+    top:
+        10%;
+
+    left:
+        -170px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                109,
+                178,
+                63,
+                0.15
+            ),
+            transparent
+            70%
+        );
+
+    filter:
+        blur(20px);
+
+}
+
+
+.contact-glow-two {
+
+    width:
+        650px;
+
+    height:
+        650px;
+
+    right:
+        -220px;
+
+    bottom:
+        -150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                8,
+                100,
+                145,
+                0.30
+            ),
+            transparent
+            70%
+        );
+
+    filter:
+        blur(20px);
+
+}
+
+
+/* ============================================================
+   DECORATIVE RINGS
+============================================================ */
+
+.contact-ring {
+
+    position:
+        absolute;
+
+    border:
+        1px solid
+        rgba(
+            121,
+            192,
+            221,
+            0.10
+        );
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+.contact-ring-one {
+
+    width:
+        720px;
+
+    height:
+        720px;
+
+    right:
+        -250px;
+
+    top:
+        8%;
+
+}
+
+
+.contact-ring-two {
+
+    width:
+        980px;
+
+    height:
+        980px;
+
+    left:
+        -370px;
+
+    bottom:
+        -550px;
+
+}
+
+
+/* ============================================================
+   CONTAINER
+============================================================ */
+
+.contact-container {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    width:
+        min(
+            1200px,
+            94%
+        );
+
+    margin:
+        0 auto;
+
+}
+
+
+/* ============================================================
+   INTRO
+============================================================ */
+
+.contact-intro {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto
+        65px;
+
+    text-align:
+        center;
+
+}
+
+
+.contact-kicker {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    color:
+        var(--contact-green-light);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.18em;
+
+}
+
+
+.contact-intro h1 {
+
+    margin:
+        0;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5.8rem
+        );
+
+    line-height:
+        0.98;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.05em;
+
+}
+
+
+.contact-intro h1 span {
+
+    color:
+        var(--contact-green);
+
+}
+
+
+.contact-intro p {
+
+    max-width:
+        650px;
+
+    margin:
+        24px auto
+        0;
+
+    color:
+        var(--contact-muted);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        clamp(
+            0.95rem,
+            1.5vw,
+            1.12rem
+        );
+
+    line-height:
+        1.8;
+
+}
+
+
+/* ============================================================
+   CONTENT LAYOUT
+============================================================ */
+
+.contact-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(
+            280px,
+            0.85fr
+        )
+        minmax(
+            420px,
+            1.15fr
+        );
+
+    gap:
+        28px;
+
+    align-items:
+        stretch;
+
+}
+
+
+/* ============================================================
+   BRAND CARD
+============================================================ */
+
+.contact-brand-card {
+
+    position:
+        relative;
+
+    padding:
+        55px 40px;
+
+    border:
+        1px solid
+        var(--contact-border);
+
+    border-radius:
+        30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.075
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                0.025
+            )
+        );
+
+    box-shadow:
+        0 25px 60px
+        rgba(
+            0,
+            0,
+            0,
+            0.22
+        );
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
+}
+
+
+.contact-brand-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    top:
+        -100px;
+
+    right:
+        -90px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(
+            109,
+            178,
+            63,
+            0.11
+        );
+
+    filter:
+        blur(15px);
+
+}
+
+
+.contact-logo-wrap {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        clamp(
+            150px,
+            18vw,
+            230px
+        );
+
+    padding:
+        10px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.36
+        );
+
+    box-shadow:
+        5px
+        5px
+        10px
+        rgba(
+            0,
+            0,
+            0,
+            0.78
+        );
+
+}
+
+
+.contact-logo {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+}
+
+
+.contact-brand-card h2 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        28px 0 8px;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        clamp(
+            1.55rem,
+            2.4vw,
+            2.2rem
+        );
+
+    line-height:
+        1.15;
+
+    font-weight:
+        800;
+
+}
+
+
+.contact-brand-card h2 span {
+
+    display:
+        block;
+
+    color:
+        var(--contact-green);
+
+}
+
+
+.contact-brand-card p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        var(--contact-muted);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        0.92rem;
+
+    line-height:
+        1.6;
+
+}
+
+
+.contact-accent {
+
+    width:
+        80px;
+
+    height:
+        5px;
+
+    margin-top:
+        25px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--contact-green);
+
+}
+
+
+/* ============================================================
+   CONTACT DETAILS
+============================================================ */
+
+.contact-details {
+
+    display:
+        grid;
+
+    gap:
+        20px;
+
+}
+
+
+/* ============================================================
+   CONTACT CARD
+============================================================ */
+
+.contact-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        64px 1fr;
+
+    gap:
+        22px;
+
+    padding:
+        30px;
+
+    border:
+        1px solid
+        var(--contact-border);
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.045
+        );
+
+    box-shadow:
+        0
+        18px
+        45px
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+    transition:
+        transform
+        0.35s ease,
+
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease;
+
+}
+
+
+.contact-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(
+            130,
+            201,
+            77,
+            0.35
+        );
+
+    background:
+        rgba(
+            130,
+            201,
+            77,
+            0.055
+        );
+
+}
+
+
+/* ============================================================
+   CONTACT ICON
+============================================================ */
+
+.contact-icon {
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(
+            109,
+            178,
+            63,
+            0.13
+        );
+
+    border:
+        1px solid
+        rgba(
+            109,
+            178,
+            63,
+            0.25
+        );
+
+}
+
+
+.contact-icon span {
+
+    color:
+        var(--contact-green-light);
+
+    font-size:
+        1.65rem;
+
+}
+
+
+/* ============================================================
+   CONTACT TEXT
+============================================================ */
+
+.contact-card-content {
+
+    min-width:
+        0;
+
+}
+
+
+.contact-card-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        var(--contact-green-light);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.contact-card h3 {
+
+    margin:
+        0 0 12px;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        1.35rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.contact-card address {
+
+    color:
+        #d7e2eb;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        0.98rem;
+
+    font-style:
+        normal;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* ============================================================
+   CONTACT ACTION
+============================================================ */
+
+.contact-action {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    margin-top:
+        16px;
+
+    color:
+        var(--contact-green-light);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        800;
+
+    transition:
+        transform
+        0.3s ease;
+
+}
+
+
+.contact-action:hover {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* ============================================================
+   PHONE
+============================================================ */
+
+.phone-placeholder {
+
+    margin:
+        0;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        1.15rem;
+
+    font-weight:
+        700;
+
+}
+
+
+.contact-note {
+
+    display:
+        block;
+
+    margin-top:
+        9px;
+
+    color:
+        #91a6b7;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        0.75rem;
+
+}
+
+
+/* ============================================================
+   BOTTOM STATEMENT
+============================================================ */
+
+.contact-bottom {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+    margin-top:
+        55px;
+
+    text-align:
+        center;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+}
+
+
+.contact-bottom span {
+
+    color:
+        var(--contact-orange);
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.35rem
+        );
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.04em;
+
+}
+
+
+.contact-bottom strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.35rem
+        );
+
+}
+
+
+/* ============================================================
+   REVEAL
+============================================================ */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity
+        0.8s ease,
+
+        transform
+        0.8s
+        cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+
+}
+
+
+.reveal.visible {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .contact-hero {
+
+        padding:
+            135px
+            5%
+            75px;
+
+    }
+
+
+    .contact-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .contact-brand-card {
+
+        min-height:
+            450px;
+
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE NAVIGATION
+============================================================ */
+
+/* @media (max-width: 820px) {
+
+    .navbar-toggle {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+    }
+
+
+    .site-nav {
+
+        position:
+            absolute;
+
+        top:
+            100%;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            10px
+            18px
+            18px;
+
+        background:
+            rgba(
+                3,
+                29,
+                52,
+                0.98
+            );
+
+        border-top:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                0.10
+            );
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        transform:
+            translateY(-10px);
+
+        transition:
+            opacity .3s ease,
+            visibility .3s ease,
+            transform .3s ease;
+
+    }
+
+
+    .site-nav.open {
+
+        opacity:
+            1;
+
+        visibility:
+            visible;
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    .site-nav .nav-link {
+
+        width:
+            100%;
+
+        padding:
+            14px 8px;
+
+        font-size:
+            14px;
+
+        border-bottom:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                .08
+            );
+
+    }
+
+} */
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 560px) {
+
+    .contact-hero {
+
+        min-height:
+            auto;
+
+        padding:
+            115px
+            5%
+            65px;
+
+    }
+
+
+    .contact-intro {
+
+        margin-bottom:
+            42px;
+
+    }
+
+
+    .contact-intro h1 {
+
+        font-size:
+            2.85rem;
+
+    }
+
+
+    .contact-intro p {
+
+        font-size:
+            0.9rem;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .contact-brand-card {
+
+        padding:
+            40px
+            22px;
+
+    }
+
+
+    .contact-logo-wrap {
+
+        width:
+            165px;
+
+    }
+
+
+    .contact-card {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            24px;
+
+    }
+
+
+    .contact-icon {
+
+        width:
+            52px;
+
+        height:
+            52px;
+
+    }
+
+
+    .contact-card h3 {
+
+        font-size:
+            1.2rem;
+
+    }
+
+
+    .contact-card address {
+
+        font-size:
+            0.9rem;
+
+    }
+
+
+    .contact-bottom {
+
+        margin-top:
+            40px;
+
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    * {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+}
+
+
+.phone-link {
+    display: inline-block;
+
+    color: #ffffff;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 800;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.phone-link:hover {
+    color: #82c94d;
+    transform: translateX(4px);
+}

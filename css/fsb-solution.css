@@ -50,6 +50,8 @@
             .24
         );
 
+        --font-primary: "Montserrat", sans-serif;
+
 }
 
 
@@ -90,9 +92,16 @@ body {
     color:
         var(--white);
 
+        font-family:
+        var(--font-primary);
+/* font-family:
+Inter,
+"Segoe UI",
+Arial,
+sans-serif; */
+
     font-family:
-        Arial,
-        Helvetica,
+        "Montserrat",
         sans-serif;
 
 }

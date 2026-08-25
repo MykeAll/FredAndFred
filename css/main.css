@@ -40,6 +40,8 @@
     --ease:
         cubic-bezier(.22, 1, .36, 1);
 
+            --font-primary: "Montserrat", sans-serif;
+
 }
 
 
@@ -71,12 +73,18 @@ body {
     overflow-x:
         hidden;
 
-    font-family:
+            font-family:
+                var(--font-primary);
+    /* font-family:
         Inter,
         "Segoe UI",
         Arial,
-        sans-serif;
+        sans-serif; */
 
+            font-family:
+                "Montserrat",
+                sans-serif;
+        
     color:
         var(--white);
 
@@ -90,6 +98,22 @@ body.menu-open {
     overflow: hidden;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-link,
+.hero-title,
+.hero-statement,
+.mission-content h1,
+.section-heading {
+    font-family:
+        "Montserrat",
+        sans-serif;
+}
+
 
 img {
     max-width: 100%;
@@ -98,6 +122,28 @@ img {
 
 a {
     text-decoration: none;
+}
+
+
+.mission-content h1 {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -0.035em;
+}
+
+.mission-content p {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-weight:
+        400;
 }
 
 
@@ -165,10 +211,10 @@ a {
         padding
         0.35s var(--ease),
 
-        background
+        background:
         0.35s var(--ease),
 
-        box-shadow
+        box-shadow:
         0.35s var(--ease);
 
 }
