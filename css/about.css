@@ -3537,7 +3537,7 @@ button {
     margin: 0 auto;
 
     /* REDUCED OPACITY */
-    opacity: .12;
+    opacity: .52;
 
     /* Softer/blended appearance */
     filter:
@@ -3559,7 +3559,7 @@ button {
 
     .services-machine {
         max-width: 950px;
-        opacity: .11;
+        /* opacity: .11; */
         transform: scale(1.05);
     }
 }
@@ -3573,7 +3573,7 @@ button {
 
     .services-machine {
         max-width: 750px;
-        opacity: .09;
+        opacity: .49;
         transform: scale(1.03);
     }
 }
