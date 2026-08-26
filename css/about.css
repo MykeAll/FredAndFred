@@ -4399,7 +4399,7 @@ button {
     margin: 0 auto;
 
     /* REDUCED OPACITY */
-    opacity: .52;
+    opacity: .22;
 
     /* Softer/blended appearance */
     filter:
@@ -4435,7 +4435,7 @@ button {
 
     .services-machine {
         max-width: 750px;
-        opacity: .49;
+        opacity: .29;
         transform: scale(1.03);
     }
 }
