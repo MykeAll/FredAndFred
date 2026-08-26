@@ -1,0 +1,2664 @@
+/* =========================================================
+   FSB SOLUTION PAGE
+   Fred & Fred Agro Engineers Limited
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --fsb-green: #063b25;
+    --fsb-green-dark: #032719;
+    --fsb-green-light: #08733f;
+
+    --fsb-gold: #d6aa32;
+    --fsb-gold-light: #f1d56a;
+
+    --fsb-white: #ffffff;
+
+    --fsb-text: #17352a;
+
+    --fsb-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.fsb-page {
+
+    width: 100%;
+    overflow: hidden;
+    background: #f5f8f5;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.fsb-hero {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 850px;
+
+    padding:
+        100px
+        25px
+        110px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(16, 125, 71, 0.35),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #063b25 0%,
+            #075f36 45%,
+            #04351f 100%
+        );
+
+    color: var(--fsb-white);
+
+    isolation: isolate;
+
+}
+
+
+/* =========================================================
+   DECORATIVE GLOW
+========================================================= */
+
+.fsb-glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(5px);
+
+    z-index: -1;
+
+}
+
+
+.fsb-glow-one {
+
+    width: 500px;
+    height: 500px;
+
+    top: -200px;
+    left: -180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214, 170, 50, 0.12),
+            transparent 70%
+        );
+
+}
+
+
+.fsb-glow-two {
+
+    width: 550px;
+    height: 550px;
+
+    right: -250px;
+    bottom: -220px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 255, 140, 0.10),
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   GRID PATTERN
+========================================================= */
+
+.fsb-grid-pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    opacity: 0.06;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.5) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.5) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
+
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.fsb-hero-container {
+
+    position: relative;
+
+    width: min(1250px, 100%);
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   BRANDING
+========================================================= */
+
+.fsb-branding {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        160px
+        minmax(0, 1fr)
+        160px;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 55px;
+
+}
+
+
+/* =========================================================
+   COMPANY MARK
+========================================================= */
+
+.fsb-company-mark {
+
+    min-height: 100px;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.fsb-title-area {
+
+    text-align: center;
+
+}
+
+
+.fsb-eyebrow {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--fsb-gold-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.fsb-title-area h1 {
+
+    margin: 0;
+
+    font-size: clamp(
+        28px,
+        4vw,
+        48px
+    );
+
+    font-weight: 900;
+
+    line-height: 1.05;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 5px 25px rgba(0,0,0,0.25);
+
+}
+
+
+.fsb-title-area p {
+
+    margin: 18px 0 0;
+
+    color: var(--fsb-gold-light);
+
+    font-size: clamp(
+        12px,
+        1.5vw,
+        17px
+    );
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.7px;
+
+}
+
+
+/* =========================================================
+   COAT OF ARMS
+========================================================= */
+
+.fsb-coat {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 150px;
+    height: 150px;
+
+    justify-self: end;
+
+}
+
+
+.fsb-coat img {
+
+    display: block;
+
+    width: 135px;
+    height: 135px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 8px 15px
+            rgba(0,0,0,0.35)
+        );
+
+    animation:
+        coatFloat 5s ease-in-out infinite;
+
+}
+
+
+@keyframes coatFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px)
+            scale(1.025);
+
+    }
+
+}
+
+/* =========================================================
+   FSB ANIMATED MODEL
+   LARGE + RESPONSIVE VERSION
+========================================================= */
+
+.fsb-model {
+    position: relative;
+
+    width: min(820px, 92vw);
+    height: min(820px, 92vw);
+
+    margin: 45px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    isolation: isolate;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   STATIC INNER FSB STRUCTURE
+========================================================= */
+
+.fsb-inner {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    /*
+       Increased from the previous 48%.
+       This makes the actual FSB diagram much larger.
+    */
+
+    width: 68%;
+    height: 68%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+
+    overflow: visible;
+
+    transform-origin: center center;
+}
+
+
+/* =========================================================
+   INNER FSB IMAGE
+========================================================= */
+
+.fsb-inner-image {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    max-width: none;
+    max-height: none;
+
+    /*
+       Keeps the extracted FSB graphic sharp.
+    */
+
+    image-rendering: auto;
+
+    transform-origin: center center;
+
+    /*
+       Main animation.
+
+       The image gently rises, enlarges and returns.
+       This is deliberately applied directly to the image
+       rather than the container.
+    */
+
+    animation:
+        fsbImageFloat 5s ease-in-out infinite,
+        fsbImagePulse 5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 18px 28px
+            rgba(0, 0, 0, 0.30)
+        );
+
+    will-change:
+        transform,
+        filter;
+
+    transition:
+        filter 0.4s ease;
+}
+
+
+/* =========================================================
+   INNER IMAGE FLOATING ANIMATION
+========================================================= */
+
+@keyframes fsbImageFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    25% {
+
+        transform:
+            translateY(-8px)
+            scale(1.015);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px)
+            scale(1.035);
+
+    }
+
+    75% {
+
+        transform:
+            translateY(-7px)
+            scale(1.015);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   INNER IMAGE BREATHING / DEPTH
+========================================================= */
+
+@keyframes fsbImagePulse {
+
+    0%,
+    100% {
+
+        filter:
+            drop-shadow(
+                0 15px 22px
+                rgba(0, 0, 0, 0.25)
+            );
+
+    }
+
+    50% {
+
+        filter:
+            drop-shadow(
+                0 25px 38px
+                rgba(0, 0, 0, 0.42)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   GLOW BEHIND INNER FSB
+========================================================= */
+
+.fsb-inner::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 125%;
+    height: 125%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(186, 218, 82, 0.25) 0%,
+            rgba(0, 140, 75, 0.16) 30%,
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    animation:
+        fsbGlowPulse 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   GLOW ANIMATION
+========================================================= */
+
+@keyframes fsbGlowPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.35;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.92);
+
+    }
+
+    50% {
+
+        opacity: 0.85;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOVING LIGHT / SHINE
+========================================================= */
+
+.fsb-inner::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -25%;
+    left: -100%;
+
+    width: 28%;
+    height: 150%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.05) 25%,
+            rgba(255, 255, 255, 0.30) 50%,
+            rgba(255, 255, 255, 0.05) 75%,
+            transparent 100%
+        );
+
+    transform:
+        skewX(-20deg);
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    animation:
+        fsbShine 6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SHINE ANIMATION
+========================================================= */
+
+@keyframes fsbShine {
+
+    0% {
+
+        left: -100%;
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 0;
+
+    }
+
+    35% {
+
+        opacity: 1;
+
+    }
+
+    55% {
+
+        left: 150%;
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        left: 150%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   TRACTOR ORBIT
+========================================================= */
+
+.tractor-orbit {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 30;
+
+    animation:
+        tractorRotation 26s linear infinite;
+
+    transform-origin:
+        center center;
+
+    will-change:
+        transform;
+}
+
+
+/* =========================================================
+   TRACTOR NODES
+========================================================= */
+
+.tractor-node {
+
+    position: absolute;
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%);
+
+    transform-origin:
+        center center;
+
+    z-index: 40;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TRACTOR IMAGE
+========================================================= */
+
+.tractor-node img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 5px 9px
+            rgba(0, 0, 0, 0.30)
+        );
+
+    /*
+       Keeps each tractor facing normally
+       while the whole orbit rotates.
+    */
+
+    animation:
+        tractorCounterRotation 26s linear infinite;
+
+    will-change:
+        transform;
+}
+
+
+/* =========================================================
+   TRACTOR ORBIT ROTATION
+========================================================= */
+
+@keyframes tractorRotation {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   KEEP TRACTORS UPRIGHT
+========================================================= */
+
+@keyframes tractorCounterRotation {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(-360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   TRACTOR POSITIONS
+========================================================= */
+
+/* TOP */
+
+.tractor-1 {
+
+    top: 0%;
+    left: 50%;
+
+}
+
+
+/* TOP RIGHT */
+
+.tractor-2 {
+
+    top: 6.7%;
+    left: 75%;
+
+}
+
+
+/* RIGHT TOP */
+
+.tractor-3 {
+
+    top: 25%;
+    left: 93.3%;
+
+}
+
+
+/* RIGHT */
+
+.tractor-4 {
+
+    top: 50%;
+    left: 100%;
+
+}
+
+
+/* RIGHT BOTTOM */
+
+.tractor-5 {
+
+    top: 75%;
+    left: 93.3%;
+
+}
+
+
+/* BOTTOM RIGHT */
+
+.tractor-6 {
+
+    top: 93.3%;
+    left: 75%;
+
+}
+
+
+/* BOTTOM */
+
+.tractor-7 {
+
+    top: 100%;
+    left: 50%;
+
+}
+
+
+/* BOTTOM LEFT */
+
+.tractor-8 {
+
+    top: 93.3%;
+    left: 25%;
+
+}
+
+
+/* LEFT BOTTOM */
+
+.tractor-9 {
+
+    top: 75%;
+    left: 6.7%;
+
+}
+
+
+/* LEFT */
+
+.tractor-10 {
+
+    top: 50%;
+    left: 0%;
+
+}
+
+
+/* LEFT TOP */
+
+.tractor-11 {
+
+    top: 25%;
+    left: 6.7%;
+
+}
+
+
+/* TOP LEFT */
+
+.tractor-12 {
+
+    top: 6.7%;
+    left: 25%;
+
+}
+
+
+/* =========================================================
+   ORBIT RING
+========================================================= */
+
+.fsb-model-ring {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 78%;
+    height: 78%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation:
+        ringPulse 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ORBIT RING PULSE
+========================================================= */
+
+@keyframes ringPulse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 0.20;
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.045);
+
+        opacity: 0.60;
+
+    }
+
+}
+
+
+/* =========================================================
+   MODEL HOVER
+========================================================= */
+
+.fsb-model:hover .fsb-inner-image {
+
+    animation-play-state: paused;
+
+    transform:
+        scale(1.055);
+
+    filter:
+        drop-shadow(
+            0 28px 42px
+            rgba(0, 0, 0, 0.48)
+        );
+}
+
+
+/* =========================================================
+   TRACTOR HOVER SPEED
+========================================================= */
+
+.fsb-model:hover .tractor-orbit {
+
+    animation-duration: 18s;
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fsb-inner-image,
+    .tractor-orbit,
+    .tractor-node img,
+    .fsb-model-ring,
+    .fsb-inner::before,
+    .fsb-inner::after {
+
+        animation: none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .fsb-model {
+
+        width: min(760px, 90vw);
+        height: min(760px, 90vw);
+
+    }
+
+    .fsb-inner {
+
+        width: 66%;
+        height: 66%;
+
+    }
+
+    .tractor-node {
+
+        width: 66px;
+        height: 66px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .fsb-model {
+
+        width: min(680px, 90vw);
+        height: min(680px, 90vw);
+
+        margin-top: 35px;
+
+    }
+
+    .fsb-inner {
+
+        width: 67%;
+        height: 67%;
+
+    }
+
+    .tractor-node {
+
+        width: 58px;
+        height: 58px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .fsb-model {
+
+        width: 96vw;
+        height: 96vw;
+
+        margin-top: 25px;
+
+    }
+
+    .fsb-inner {
+
+        width: 70%;
+        height: 70%;
+
+    }
+
+    .tractor-node {
+
+        width: 46px;
+        height: 46px;
+
+    }
+
+    .fsb-model-ring {
+
+        width: 82%;
+        height: 82%;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .fsb-model {
+
+        width: 98vw;
+        height: 98vw;
+
+    }
+
+    .fsb-inner {
+
+        width: 72%;
+        height: 72%;
+
+    }
+
+    .tractor-node {
+
+        width: 38px;
+        height: 38px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .fsb-inner {
+
+        width: 74%;
+        height: 74%;
+
+    }
+
+    .tractor-node {
+
+        width: 32px;
+        height: 32px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SECTION 2 — FSB FARM DEVELOPMENT LAYOUT
+========================================================= */
+
+.fsb-layout-section {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 120px 30px 110px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(19, 117, 66, 0.30),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            #021f14 0%,
+            #063b25 48%,
+            #021b12 100%
+        );
+
+    isolation: isolate;
+}
+
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.layout-glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(90px);
+
+    opacity: 0.35;
+
+    z-index: -2;
+
+    animation: layoutGlow 8s ease-in-out infinite alternate;
+}
+
+
+.layout-glow-one {
+
+    width: 420px;
+
+    height: 420px;
+
+    top: 8%;
+
+    left: -160px;
+
+    background: rgba(22, 160, 88, 0.35);
+}
+
+
+.layout-glow-two {
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -220px;
+
+    bottom: 0;
+
+    background: rgba(204, 166, 54, 0.20);
+
+    animation-delay: 2s;
+}
+
+
+@keyframes layoutGlow {
+
+    from {
+
+        transform: translate3d(
+            0,
+            0,
+            0
+        ) scale(1);
+
+    }
+
+    to {
+
+        transform: translate3d(
+            30px,
+            -25px,
+            0
+        ) scale(1.15);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.layout-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    opacity: 0.07;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.15) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.15) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+}
+
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.fsb-layout-container {
+
+    position: relative;
+
+    width: min(
+        1400px,
+        100%
+    );
+
+    margin: 0 auto;
+}
+
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.fsb-layout-heading {
+
+    width: min(
+        850px,
+        100%
+    );
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+
+.layout-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+    color: #d4af37;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.22em;
+
+    text-transform: uppercase;
+}
+
+
+.layout-eyebrow::before,
+.layout-eyebrow::after {
+
+    content: "";
+
+    width: 38px;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d4af37
+    );
+}
+
+
+.layout-eyebrow::after {
+
+    background: linear-gradient(
+        90deg,
+        #d4af37,
+        transparent
+    );
+}
+
+
+.fsb-layout-heading h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        2.2rem,
+        5vw,
+        4.4rem
+    );
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -0.04em;
+}
+
+
+.fsb-layout-heading h2 span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #d4af37;
+}
+
+
+.fsb-layout-heading p {
+
+    width: min(
+        700px,
+        100%
+    );
+
+    margin: 25px auto 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.72
+    );
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   MAIN STAGE
+========================================================= */
+
+.fsb-layout-stage {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 680px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    perspective: 1400px;
+}
+
+
+
+/* =========================================================
+   IMAGE GLOW
+========================================================= */
+
+.layout-image-glow {
+
+    position: absolute;
+
+    width: 55%;
+
+    height: 65%;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(
+                30,
+                160,
+                86,
+                0.35
+            ),
+            transparent 70%
+        );
+
+    filter: blur(45px);
+
+    pointer-events: none;
+
+    animation: imageGlowPulse 5s ease-in-out infinite;
+}
+
+
+@keyframes imageGlowPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.55;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(0.95);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(1.08);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   DECORATIVE ORBITS
+========================================================= */
+
+.layout-orbit {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(
+        212,
+        175,
+        55,
+        0.25
+    );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    pointer-events: none;
+}
+
+
+.layout-orbit-one {
+
+    width: 600px;
+
+    height: 600px;
+
+    animation:
+        orbitRotate 25s linear infinite;
+}
+
+
+.layout-orbit-two {
+
+    width: 720px;
+
+    height: 720px;
+
+    border-color: rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+    animation:
+        orbitRotateReverse 35s linear infinite;
+}
+
+
+.layout-orbit-one::before,
+.layout-orbit-two::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    top: 50%;
+
+    left: -4px;
+
+    border-radius: 50%;
+
+    background: #d4af37;
+
+    box-shadow:
+        0 0 15px #d4af37,
+        0 0 30px rgba(
+            212,
+            175,
+            55,
+            0.6
+        );
+}
+
+
+.layout-orbit-two::before {
+
+    width: 6px;
+
+    height: 6px;
+
+    left: auto;
+
+    right: -3px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 15px rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+}
+
+
+@keyframes orbitRotate {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes orbitRotateReverse {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(360deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(0deg);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+.fsb-layout-image-wrap {
+
+    position: relative;
+
+    width: min(
+        620px,
+        72vw
+    );
+
+    z-index: 5;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow:
+
+        0 30px 80px rgba(
+            0,
+            0,
+            0,
+            0.45
+        ),
+
+        0 0 0 1px rgba(
+            212,
+            175,
+            55,
+            0.35
+        );
+
+    transform:
+        rotateX(2deg)
+        rotateY(-3deg);
+
+    transition:
+        transform 0.25s ease-out,
+        box-shadow 0.4s ease;
+
+    animation:
+        layoutFloat 6s ease-in-out infinite;
+}
+
+
+.fsb-layout-image-wrap:hover {
+
+    box-shadow:
+
+        0 40px 100px rgba(
+            0,
+            0,
+            0,
+            0.55
+        ),
+
+        0 0 45px rgba(
+            212,
+            175,
+            55,
+            0.22
+        );
+}
+
+
+@keyframes layoutFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotateX(2deg)
+            rotateY(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-16px)
+            rotateX(3deg)
+            rotateY(3deg);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.fsb-layout-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    transform: scale(1.01);
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.fsb-layout-image-wrap:hover
+.fsb-layout-image {
+
+    transform: scale(1.035);
+}
+
+
+
+/* =========================================================
+   MOVING SCAN EFFECT
+========================================================= */
+
+.image-scan {
+
+    position: absolute;
+
+    top: -30%;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 20%;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(
+                212,
+                175,
+                55,
+                0.15
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                0.45
+            ),
+            rgba(
+                212,
+                175,
+                55,
+                0.15
+            ),
+            transparent
+        );
+
+    filter: blur(3px);
+
+    animation:
+        imageScan 5s ease-in-out infinite;
+}
+
+
+@keyframes imageScan {
+
+    0% {
+
+        top: -30%;
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        top: 110%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FLOATING INFORMATION CARDS
+========================================================= */
+
+.layout-info-card {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 215px;
+
+    padding: 14px 17px;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+
+    border-radius: 12px;
+
+    background:
+        rgba(
+            3,
+            38,
+            24,
+            0.82
+        );
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 15px 35px rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+
+    animation:
+        cardFloat 5s ease-in-out infinite;
+}
+
+
+.layout-card-icon {
+
+    flex: 0 0 38px;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 9px;
+
+    color: #062b1b;
+
+    background: #d4af37;
+
+    font-size: 0.72rem;
+
+    font-weight: 900;
+}
+
+
+.layout-info-card strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 0.82rem;
+
+    font-weight: 800;
+}
+
+
+.layout-info-card span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.58
+    );
+
+    font-size: 0.67rem;
+
+    line-height: 1.4;
+}
+
+
+.layout-card-one {
+
+    top: 8%;
+
+    left: 3%;
+
+    animation-delay: 0s;
+}
+
+
+.layout-card-two {
+
+    top: 18%;
+
+    right: 2%;
+
+    animation-delay: 1s;
+}
+
+
+.layout-card-three {
+
+    bottom: 15%;
+
+    left: 1%;
+
+    animation-delay: 2s;
+}
+
+
+.layout-card-four {
+
+    bottom: 8%;
+
+    right: 3%;
+
+    animation-delay: 3s;
+}
+
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   CONNECTING LINES
+========================================================= */
+
+.layout-card-one::after,
+.layout-card-two::after,
+.layout-card-three::after,
+.layout-card-four::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            transparent
+        );
+
+    opacity: 0.5;
+}
+
+
+.layout-card-one::after,
+.layout-card-three::after {
+
+    right: -70px;
+
+    top: 50%;
+}
+
+
+.layout-card-two::after,
+.layout-card-four::after {
+
+    left: -70px;
+
+    top: 50%;
+
+    transform: rotate(180deg);
+}
+
+
+
+/* =========================================================
+   BOTTOM STATEMENT
+========================================================= */
+
+.fsb-layout-statement {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        minmax(300px, 650px)
+        1fr;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 50px;
+}
+
+
+.statement-line {
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                212,
+                175,
+                55,
+                0.6
+            ),
+            transparent
+        );
+}
+
+
+.statement-content {
+
+    text-align: center;
+}
+
+
+.statement-content span {
+
+    color: #d4af37;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+}
+
+
+.statement-content h3 {
+
+    margin: 12px 0;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        1.7rem,
+        3vw,
+        2.7rem
+    );
+
+    line-height: 1.15;
+
+    font-weight: 900;
+}
+
+
+.statement-content p {
+
+    margin: 0;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.62
+    );
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.fsb-layout-heading,
+.fsb-layout-stage,
+.fsb-layout-statement {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+.fsb-layout-heading.revealed,
+.fsb-layout-stage.revealed,
+.fsb-layout-statement.revealed {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .fsb-layout-section {
+
+        padding:
+            100px
+            25px
+            90px;
+
+    }
+
+
+    .fsb-layout-stage {
+
+        min-height: 620px;
+
+    }
+
+
+    .fsb-layout-image-wrap {
+
+        width: min(
+            570px,
+            72vw
+        );
+
+    }
+
+
+    .layout-card-one {
+
+        left: 0;
+
+    }
+
+
+    .layout-card-two {
+
+        right: 0;
+
+    }
+
+
+    .layout-card-three {
+
+        left: 0;
+
+    }
+
+
+    .layout-card-four {
+
+        right: 0;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .fsb-layout-section {
+
+        padding:
+            80px
+            18px
+            75px;
+
+    }
+
+
+    .fsb-layout-heading {
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .fsb-layout-heading h2 {
+
+        font-size: 2.1rem;
+
+    }
+
+
+    .fsb-layout-heading p {
+
+        font-size: 0.86rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    .fsb-layout-stage {
+
+        min-height: auto;
+
+        padding-bottom: 30px;
+
+    }
+
+
+    .layout-orbit-one {
+
+        width: 370px;
+
+        height: 370px;
+
+    }
+
+
+    .layout-orbit-two {
+
+        width: 440px;
+
+        height: 440px;
+
+    }
+
+
+    .fsb-layout-image-wrap {
+
+        width: 94%;
+
+        max-width: 500px;
+
+        transform: none;
+
+        animation:
+            mobileImageFloat
+            6s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes mobileImageFloat {
+
+        0%,
+        100% {
+
+            transform:
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-8px);
+
+        }
+
+    }
+
+
+    /* Hide desktop floating cards */
+
+    .layout-info-card {
+
+        display: none;
+
+    }
+
+
+    .fsb-layout-statement {
+
+        display: block;
+
+        margin-top: 35px;
+
+    }
+
+
+    .statement-line {
+
+        display: none;
+
+    }
+
+
+    .statement-content {
+
+        padding-top: 20px;
+
+    }
+
+
+    .statement-content h3 {
+
+        font-size: 1.7rem;
+
+    }
+
+
+    .statement-content p {
+
+        font-size: 0.82rem;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .fsb-layout-section {
+
+        padding:
+            70px
+            14px
+            65px;
+
+    }
+
+
+    .layout-eyebrow {
+
+        font-size: 0.65rem;
+
+        letter-spacing: 0.14em;
+
+    }
+
+
+    .layout-eyebrow::before,
+    .layout-eyebrow::after {
+
+        width: 20px;
+
+    }
+
+
+    .fsb-layout-heading h2 {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .fsb-layout-image-wrap {
+
+        width: 100%;
+
+        border-radius: 12px;
+
+    }
+
+
+    .layout-orbit-one {
+
+        width: 300px;
+
+        height: 300px;
+
+    }
+
+
+    .layout-orbit-two {
+
+        width: 350px;
+
+        height: 350px;
+
+    }
+
+
+    .statement-content h3 {
+
+        font-size: 1.45rem;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .layout-glow,
+    .layout-orbit,
+    .layout-image-glow,
+    .fsb-layout-image-wrap,
+    .image-scan,
+    .layout-info-card {
+
+        animation: none !important;
+
+    }
+
+
+    .fsb-layout-heading,
+    .fsb-layout-stage,
+    .fsb-layout-statement {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+
+    }
+
+}

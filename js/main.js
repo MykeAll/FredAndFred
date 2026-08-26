@@ -768,3 +768,81 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+/* =========================================================
+   FSB SECTION 2 — INTERACTIVE IMAGE TILT
+========================================================= */
+
+(function () {
+
+    const stage = document.querySelector(".fsb-layout-stage");
+    const image = document.querySelector(".fsb-layout-image-wrap");
+
+    if (!stage || !image) return;
+
+
+    /*
+     * Disable mouse tilt on touch devices.
+     */
+
+    if (
+        window.matchMedia("(hover: none)").matches ||
+        window.innerWidth <= 700
+    ) {
+        return;
+    }
+
+
+    stage.addEventListener("mousemove", function (event) {
+
+        const rect = stage.getBoundingClientRect();
+
+        const x =
+            event.clientX -
+            rect.left;
+
+        const y =
+            event.clientY -
+            rect.top;
+
+
+        const centerX =
+            rect.width / 2;
+
+        const centerY =
+            rect.height / 2;
+
+
+        const rotateY =
+            ((x - centerX) / centerX) * 5;
+
+
+        const rotateX =
+            ((centerY - y) / centerY) * 5;
+
+
+        image.style.animation =
+            "none";
+
+
+        image.style.transform =
+            `perspective(1200px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-5px)
+             scale(1.015)`;
+
+    });
+
+
+    stage.addEventListener("mouseleave", function () {
+
+        image.style.transform =
+            "";
+
+        image.style.animation =
+            "";
+
+    });
+
+})();
