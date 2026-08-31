@@ -907,19 +907,10 @@ button {
 
     width: 90%;
     height: 48%;
-
-    border-radius:
-        50%
-        50%
-        0
-        0;
-
+    border-radius: 50% 50% 0 0;
     background: #073859;
-
     border: none;
-
     opacity: 1;
-
     pointer-events: none;
 }
 
@@ -1184,19 +1175,17 @@ button {
 
 .map-text {
 
-    background: #00000041;
+    background: #0000007a;
 
-    padding: 8px;
+    padding: 13px;
 
     box-shadow:
         5px
         5px
-        10px
+        7px
         rgba(0, 0, 0, .78);
 
-    border-radius:
-        0
-        30px;
+     border-radius: 7% 7% 0 0;
 }
 
 
